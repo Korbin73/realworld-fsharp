@@ -8,6 +8,7 @@ open RealWorld.Models
 open RealWorld.Effects
 open BsonDocConverter
 open Newtonsoft.Json
+open MongoDB.Bson.IO
 
 type LoginDetails = {
   email: string;
@@ -17,6 +18,7 @@ type LoginDetails = {
 type Login = {
   user: LoginDetails;
 }
+
 
 let unauthorized s = Suave.Response.response HTTP_401 s
 
